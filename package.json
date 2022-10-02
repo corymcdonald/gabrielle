@@ -1,0 +1,14 @@
+{
+  "name": "gabrielle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "parcel": "^2.7.0"
+  },
+  "scripts": {
+    "start": "parcel serve .",
+    "build": "parcel build"
+  },
+  "source": "index.html"
+}
