@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/corymcdonald/.nvm/versions/node/v16.13.2/bin/node /usr/local/Cellar/yarn/1.22.18/libexec/bin/yarn.js run
+  /Users/corymcdonald/.nvm/versions/node/v16.13.2/bin/node /usr/local/Cellar/yarn/1.22.18/libexec/bin/yarn.js start
 
 PATH: 
   /usr/local/opt/postgresql@13/bin:/usr/local/sbin:/Users/corymcdonald/.nvm/versions/node/v16.13.2/bin:/Users/corymcdonald/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/corymcdonald/.cargo/bin:/usr/local/opt/fzf/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/corymcdonald/repos/gabrielle/package.json: Unexpected string in JSON at position 138
+  SyntaxError: /Users/corymcdonald/repos/gabrielle/package.json: Unexpected token } in JSON at position 225
       at JSON.parse (<anonymous>)
       at /usr/local/Cellar/yarn/1.22.18/libexec/lib/cli.js:1625:59
       at Generator.next (<anonymous>)
@@ -29,12 +29,11 @@ npm manifest:
     "license": "MIT",
     "dependencies": {
       "parcel": "^2.7.0"
-    }
+    },
     "scripts": {
-      "start": "parcel",
+      "start": "parcel serve index.html",
       "build": "parcel build"
     },
-    "source": "index.html"
   }
 
 yarn manifest: 

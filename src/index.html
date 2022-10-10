@@ -13,20 +13,7 @@
   </div>
 
   <script src="pixelit.js"></script>
-  <script>
-    import foo from "*.png";
-
-    document.addEventListener('DOMContentLoaded', (event) => {
-      const maxImage = 13
-      const number = Math.floor(Math.random() * maxImage);
-      document.getElementById("pixelitimg").src = `./image${number}.png`
-
-      //create object
-      const px = new pixelit({ maxHeight: 300, maxWidth: 300 });
-      px.draw().pixelate();
-      px.resizeImage()
-    });
-  </script>
+  <script src="index.js" type="module"></script>
 </body>
 
 </html>

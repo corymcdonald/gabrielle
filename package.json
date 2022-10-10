@@ -7,8 +7,7 @@
     "parcel": "^2.7.0"
   },
   "scripts": {
-    "start": "parcel serve .",
+    "start": "parcel serve src/**/*",
     "build": "parcel build"
-  },
-  "source": "index.html"
+  }
 }
