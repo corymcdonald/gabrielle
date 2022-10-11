@@ -7,7 +7,10 @@
     "parcel": "^2.7.0"
   },
   "scripts": {
-    "start": "parcel serve src/**/*",
+    "start": "parcel serve src/index.html",
     "build": "parcel build"
+  },
+  "devDependencies": {
+    "parcel-reporter-static-files-copy": "^1.4.0"
   }
 }

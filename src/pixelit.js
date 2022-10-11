@@ -355,8 +355,8 @@ class pixelit {
   }
 
   convertToCircles(maxHeight, maxWidth) {
-    const step = 10;
-    const r = 9;
+    const step = 13;
+    const r = 12;
 
     for (var y = 0; y < maxHeight; y+= step) {
       for (var x = 0; x < maxWidth; x+= step) {
@@ -451,6 +451,7 @@ class pixelit {
     this.drawto.width = this.drawfrom.width;
     this.drawto.height = this.drawfrom.height;
     //draw
+    console.log(this.drawfrom)
     this.ctx.drawImage(this.drawfrom, 0, 0);
     //resize is always done
     this.resizeImage();

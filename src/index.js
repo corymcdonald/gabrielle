@@ -1,17 +1,16 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  const maxImage = 13
-  const number = Math.floor(Math.random() * maxImage);
-  const image = document.getElementById("pixelitimg")
-  var img = new Image();
+  console.log("Start")
+  const maxImage = 12
+  const number = Math.floor(Math.random() * maxImage) + 1;
+  const img = document.getElementById("pixelitimg")
 
-  img.onload = () => {
-    image.src = `./image${number}.png`;
-    console.log('loading')
-
-    const px = new pixelit({ maxHeight: 300, maxWidth: 300 });
+  const src = `/image${number}.png`;
+  img.onload = function() {
+    const px = new pixelit();
     px.draw().pixelate();
-    px.resizeImage()
   }
-  img.src = `./image${number}.png`;
+  console.log(`loading ${ src }`)
+  img.src = src
+
 });
