@@ -1,6 +1,30 @@
 import ColorThief from 'colorthief'
 import tinycolor from "tinycolor2";
 
+const randomN = (n) => ( Math.floor(Math.random() * n) )
+
+const phrases = [
+  "you are an absolutely gorgeous woman",
+  "I think that you are incredibly smart",
+  "you are pretty dang neat",
+  'you are a very thoughtful, kind, and caring individual',
+  "I love when you get so excited that you clap your hands",
+  "you are a great dog mom",
+  "Gabrielle is a great name",
+  "You are perfect just the way you are",
+  "You kill it on the dance floor",
+  "I always look forward to spending time with you",
+  "You have a great laugh and I love seeing you smile",
+  "I appreciate how non-judgemental you are",
+  "When I talk to you it always make my day",
+  "I love talking to you",
+  "you are so damn loveable",
+  "I'm glad I met you",
+  "You have great taste in music",
+  "You're my favorite",
+  "You have beautiful eyes"
+
+]
 
 document.addEventListener('DOMContentLoaded', (event) => {
   console.log("Start")
@@ -42,17 +66,17 @@ const postLoad = () => {
 }
 
 const populateWords = (palette) => {
-  const random = palette[Math.floor(Math.random() * palette.length)]
-  const random2 = palette[Math.floor(Math.random() * palette.length)]
-
+  const random = palette[randomN(palette.length)]
+  const random2 = palette[randomN(palette.length)]
   var randomStroke = tinycolor.mostReadable(random, ["black", "white"]).toRgbString()
   var randomStroke2 = tinycolor.mostReadable(random2, ["black", "white"]).toRgbString()
 
 
-  const phrase = "you are the most beautiful woman in the whole wide world"
+  const phrase = phrases[randomN(phrases.length)]
   const words = phrase.split(' ')
   const first = words.slice(0,words.length / 2).join(' ')
-  const second = words.slice(-words.length / 2 -1).join(' ')
+  const offset = words.length % 2 == 0 ? 0 : -1
+  const second = words.slice(-words.length / 2 - offset ).join(' ')
 
   const topText = document.getElementById('topText')
   const bottomText = document.getElementById('bottomText')
@@ -67,9 +91,6 @@ const populateWords = (palette) => {
   bottomText.setAttribute('stroke', randomStroke2)
 }
 
-function circlePath(cx, cy, r){
-  return 'M '+cx+' '+cy+' m -'+r+', 0 a '+r+','+r+' 0 1,0 '+(r*2)+',0 a '+r+','+r+' 0 1,0 -'+(r*2)+',0';
-}
 
 window.mobileCheck = function() {
   let check = false;

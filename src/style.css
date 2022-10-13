@@ -28,7 +28,7 @@ body {
 
 textpath {
 	paint-order: stroke;
-	stroke-width: 1px;
+	stroke-width: 2px;
 	stroke-linecap: butt;
 	stroke-linejoin: miter;
 }
