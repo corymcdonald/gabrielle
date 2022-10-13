@@ -311,7 +311,11 @@ class pixelit {
 
 
     this.convertToCircles(finalWidth, finalHeight);
+
+
+
     this.ctx.globalCompositeOperation='source-in';
+
 
     //draw to final canvas
     //https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
@@ -330,7 +334,14 @@ class pixelit {
     tempCanvas.remove();
 
 
+    // this.ctx.globalCompositeOperation='destination-atop';
+    // this.ctx.beginPath();
+    // this.ctx.arc(finalWidth/2, finalHeight/2, 250, 0, 2 * Math.PI);
+    // this.ctx.fill();
+
     this.ctx.globalCompositeOperation='source-over';
+
+
     return this;
   }
 
@@ -451,7 +462,6 @@ class pixelit {
     this.drawto.width = this.drawfrom.width;
     this.drawto.height = this.drawfrom.height;
     //draw
-    console.log(this.drawfrom)
     this.ctx.drawImage(this.drawfrom, 0, 0);
     //resize is always done
     this.resizeImage();

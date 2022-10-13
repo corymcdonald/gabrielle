@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
-    "parcel": "^2.7.0"
+    "colorthief": "^2.3.2",
+    "parcel": "^2.7.0",
+    "tinycolor2": "^1.4.2"
   },
   "scripts": {
     "start": "parcel serve src/index.html",

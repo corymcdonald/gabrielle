@@ -1,18 +1,43 @@
 <html>
+  <head>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Alkalami"
+    />
+  </head>
 
-<head>
-  <link href="style.css" type="text/css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alkalami">
-</head>
+  <body>
+    <div class="cross-stitch">
+      <img id="pixelitimg" alt="" />
+      <canvas id="pixelitcanvas"></canvas>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        id="topWords"
+        width="400"
+        viewBox="0 0 400 400"
+      >
+        <path
+          id="top"
+          d="M 0 75 C 0,175 300,175 300 75"
+          fill="none"
+        />
+        <path
+          id="bottom"
+          d="M 0 75 C 0,175 300,175 300 75"
+          fill="none"
+        />
+        <text x="33%" id="topText">
+          <textPath xlink:href="#top"></textPath>
+        </text>
+        <text x="33%" id="bottomText">
+          <textPath xlink:href="#bottom"></textPath>
+        </text>
+      </svg>
+    </div>
 
-<body>
-  <div class="cross-stitch">
-    <img id="pixelitimg" alt="">
-    <canvas id="pixelitcanvas"></canvas>
-  </div>
 
-  <script src="pixelit.js"></script>
-  <script src="index.js" type="module"></script>
-</body>
-
+    <script src="pixelit.js"></script>
+    <script src="index.js" type="module"></script>
+  </body>
 </html>
