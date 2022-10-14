@@ -1,5 +1,7 @@
 import ColorThief from 'colorthief'
 import tinycolor from "tinycolor2";
+import JSConfetti from 'js-confetti'
+const jsConfetti = new JSConfetti()
 
 const randomN = (n) => ( Math.floor(Math.random() * n) )
 
@@ -20,13 +22,26 @@ const phrases = [
   "I love talking to you",
   "I'm glad I met you",
   "You have great taste in music",
-  "You're my favorite",
-  "You have beautiful eyes"
+  "You are my favorite",
+  "You have beautiful eyes",
+  "you're the best at celebrating birthdays",
+  "you have a talent for making delicious baked goods",
+  "You bring happiness into my day",
+  "you have a great group of friends",
+  "I like how passionate you are about justice",
+  "I am impressed at how good you are with words",
+  "You have a way of making me smile",
+  "You always smell really good",
+  "I really like your face",
+  "You look really pretty today",
 ]
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  console.log("Start")
-  const maxImage = 12
+  regenerate()
+})
+
+const regenerate = () => {
+  const maxImage = 30
   let number = Math.floor(Math.random() * maxImage) + 1;
   const img = document.getElementById("pixelitimg")
 
@@ -39,13 +54,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     px.draw().pixelate();
     postLoad()
     populateWords(palette)
-
-
   }
   console.log(`loading ${ src }`)
   img.src = src
 
-});
+};
 
 const postLoad = () => {
   const circle = document.querySelector(".cross-stitch").getBoundingClientRect();
@@ -64,11 +77,8 @@ const postLoad = () => {
 }
 
 const populateWords = (palette) => {
-  const random = palette[randomN(palette.length)]
-  const random2 = palette[randomN(palette.length)]
-  var randomStroke = tinycolor.mostReadable(random, ["black", "white"]).toRgbString()
-  var randomStroke2 = tinycolor.mostReadable(random2, ["black", "white"]).toRgbString()
-
+  const selected = palette[randomN(palette.length)]
+  const random = tinycolor(selected).darken(20).toHexString();
 
   const phrase = phrases[randomN(phrases.length)]
   const words = phrase.split(' ')
@@ -78,15 +88,14 @@ const populateWords = (palette) => {
 
   const topText = document.getElementById('topText')
   const bottomText = document.getElementById('bottomText')
-  topText.querySelector('textpath').innerHTML = first
-  bottomText.querySelector('textpath').innerHTML = second
+
+  topText.children[0].innerHTML = first
+  bottomText.children[0].innerHTML = second
 
   topText.setAttribute('x', percentageFormula(first.length) + "%")
   bottomText.setAttribute('x', percentageFormula(second.length) +"%")
   topText.setAttribute('fill', random)
-  bottomText.setAttribute('fill', random2)
-  topText.setAttribute('stroke', randomStroke)
-  bottomText.setAttribute('stroke', randomStroke2)
+  bottomText.setAttribute('fill', random)
 }
 
 
@@ -100,3 +109,12 @@ window.mobileCheck = function() {
 const percentageFormula = (length) => (
   -1.55*length + 68.5
  )
+
+
+
+
+document.querySelector('.button').onclick = (e) =>{
+  e.preventDefault();
+  jsConfetti.addConfetti()
+  regenerate()
+}
