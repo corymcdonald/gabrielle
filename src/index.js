@@ -18,12 +18,10 @@ const phrases = [
   "I appreciate how non-judgemental you are",
   "When I talk to you it always make my day",
   "I love talking to you",
-  "you are so damn loveable",
   "I'm glad I met you",
   "You have great taste in music",
   "You're my favorite",
   "You have beautiful eyes"
-
 ]
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -75,7 +73,7 @@ const populateWords = (palette) => {
   const phrase = phrases[randomN(phrases.length)]
   const words = phrase.split(' ')
   const first = words.slice(0,words.length / 2).join(' ')
-  const offset = words.length % 2 == 0 ? 0 : -1
+  const offset = words.length % 2 == 0 ? 0 : 1
   const second = words.slice(-words.length / 2 - offset ).join(' ')
 
   const topText = document.getElementById('topText')
