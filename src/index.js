@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 const regenerate = () => {
-  const maxImage = 30;
+  const maxImage = 31;
   let number = Math.floor(Math.random() * maxImage) + 1;
   const img = document.getElementById("pixelitimg");
 
@@ -125,6 +125,8 @@ const percentageFormula = (length) => -1.55 * length + 68.5;
 
 document.querySelector(".button").onclick = (e) => {
   e.preventDefault();
+  regenerate();
+
   configs = [
   ]
   Array.from(['❤️', "💕", "❤️", "💙", "💗", "💛", "💖", "💚", "🧡", "🤎"]).forEach((i) => {
@@ -133,6 +135,4 @@ document.querySelector(".button").onclick = (e) => {
 
   const selected = configs[randomN(configs.length)];
   jsConfetti.addConfetti(selected);
-
-  regenerate();
 };
