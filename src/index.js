@@ -131,7 +131,9 @@ const percentageFormula = (length) => -1.55 * length + 68.5;
 
 document.querySelector(".button").onclick = (e) => {
   e.preventDefault();
+  addBody("1")
   regenerate();
+  addBody("2")
 
   configs = [
   ]
