@@ -14,5 +14,6 @@
   },
   "devDependencies": {
     "parcel-reporter-static-files-copy": "^1.4.0"
-  }
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }

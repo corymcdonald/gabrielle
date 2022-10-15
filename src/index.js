@@ -129,6 +129,7 @@ document.querySelector(".button").onclick = (e) => {
 
   configs = [
   ]
+
   Array.from(['❤️', "💕", "❤️", "💙", "💗", "💛", "💖", "💚", "🧡", "🤎"]).forEach((i) => {
     configs.push({ emojis: [i], confettiRadius: 100, confettiNumber: 30 })
   })
