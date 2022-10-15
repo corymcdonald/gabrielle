@@ -57,7 +57,6 @@ const regenerate = () => {
     postLoad();
     populateWords(palette);
   };
-  console.log(`loading ${src}`);
   img.src = src;
 };
 
@@ -125,14 +124,14 @@ const percentageFormula = (length) => -1.55 * length + 68.5;
 
 document.querySelector(".button").onclick = (e) => {
   e.preventDefault();
-  regenerate();
 
   let configs = [ ]
 
   Array.from(['❤️', "💕", "❤️", "💙", "💗", "💛", "💖", "💚", "🧡", "🤎"]).forEach((i) => {
-    configs.push({ emojis: [i],  emojiSize:200 })
+    configs.push({ emojis: [i],  confettiNumber: 25, confettiRadius: 100,  emojiSize:200 })
   })
 
   const selected = configs[randomN(configs.length)];
   jsConfetti.addConfetti(selected);
+  regenerate();
 };
