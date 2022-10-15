@@ -130,7 +130,7 @@ document.querySelector(".button").onclick = (e) => {
   let configs = [ ]
 
   Array.from(['❤️', "💕", "❤️", "💙", "💗", "💛", "💖", "💚", "🧡", "🤎"]).forEach((i) => {
-    configs.push({ emojis: [i], confettiRadius: 100, confettiNumber: 30 })
+    configs.push({ emojis: [i],  emojiSize:200 })
   })
 
   const selected = configs[randomN(configs.length)];
