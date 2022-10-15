@@ -5,12 +5,6 @@ const jsConfetti = new JSConfetti();
 
 const randomN = (n) => Math.floor(Math.random() * n);
 
-const addBody = (text) => {
-  const template = document.createElement('div');
-  template.innerHTML = text;
-  document.body.appendChild(template);
-}
-
 const phrases = [
   "you are an absolutely gorgeous woman",
   "I think that you are incredibly smart",
@@ -131,22 +125,14 @@ const percentageFormula = (length) => -1.55 * length + 68.5;
 
 document.querySelector(".button").onclick = (e) => {
   e.preventDefault();
-  addBody("1")
   regenerate();
-  addBody("2")
 
   let configs = [ ]
 
-  addBody("YEE HAW")
-
   Array.from(['❤️', "💕", "❤️", "💙", "💗", "💛", "💖", "💚", "🧡", "🤎"]).forEach((i) => {
-    addBody(i)
     configs.push({ emojis: [i], confettiRadius: 100, confettiNumber: 30 })
   })
-  addBody("ARRAY FROM")
 
   const selected = configs[randomN(configs.length)];
-  addBody("selected: "+ JSON.stringify(selected))
   jsConfetti.addConfetti(selected);
-  addBody("got it done")
 };
