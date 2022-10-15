@@ -135,8 +135,7 @@ document.querySelector(".button").onclick = (e) => {
   regenerate();
   addBody("2")
 
-  configs = [
-  ]
+  let configs = [ ]
 
   addBody("YEE HAW")
 
